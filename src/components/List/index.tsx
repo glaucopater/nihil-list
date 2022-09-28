@@ -31,9 +31,9 @@ export const List = <T,>({ data }: React.PropsWithChildren<ListProps<T>>) => {
             className={applySelectedClass(index as number)}
           >
             {JSON.stringify(item)}
-            {isSelectedItem(index as number) && <span className="adornment">  
-              X</span>
-                }
+            {isSelectedItem(index as number) && (
+              <span className="adornment">X</span>
+            )}
           </li>
         );
       })}

@@ -11,11 +11,12 @@ function App() {
   const handleUpdateStore = (e: Key | null | undefined) => {
     const val = e as unknown as number;
 
-    if (!selectedItems?.includes(val)) {
-      setSelectedItems([...selectedItems, val]);
-    } else {
-      setSelectedItems(selectedItems.filter((item) => item != val));
-    }
+    // basic toggle mode for the selection feature
+    const updatedSelectedItems = !selectedItems?.includes(val)
+      ? [...selectedItems, val]
+      : selectedItems.filter((item) => item !== val);
+
+    setSelectedItems(updatedSelectedItems);
   };
 
   return (
