@@ -2,16 +2,21 @@ import { Key, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { List } from "./components/List";
-import { dataset1, dataset2 } from "./components/List/List.fixtures";
+import { dataset2 } from "./components/List/List.fixtures";
 import UserContext from "./contexts/UserContext";
 
 function App() {
-  const [selectedItems, setSelectedItems] = useState<any>();
+  const [selectedItems, setSelectedItems] = useState<number[]>([]);
 
   const handleUpdateStore = (e: Key | null | undefined) => {
-    setSelectedItems(e);
-  };
+    const val = e as unknown as number;
 
+    if (!selectedItems?.includes(val)) {
+      setSelectedItems([...selectedItems, val]);
+    } else {
+      setSelectedItems(selectedItems.filter((item) => item != val));
+    }
+  };
 
   return (
     <UserContext.Provider
@@ -19,12 +24,6 @@ function App() {
     >
       <div className="App">
         <Header />
-        <List
-          data={dataset1}
-          renderer={function (): void {
-            throw new Error("Function not implemented.");
-          }}
-        />
         <List
           data={dataset2}
           renderer={function (): void {

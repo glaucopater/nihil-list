@@ -1,24 +1,20 @@
-import { HeaderProps } from "./Header.types";
 import "./Header.style.css";
 import { useContext } from "react";
 import UserContext, { ContextProps } from "../../contexts/UserContext";
 
-export const Header = ({ selectedItems }: HeaderProps) => {
+export const Header = () => {
   const initialStore = useContext(UserContext);
-
-  const { store: selectedItem } = (initialStore as ContextProps) || {};
-
-  const selectedItemId = selectedItem as unknown as number;
+  const { store } = (initialStore as ContextProps) || {};
+  const selectedItems = store as number[];
 
   return (
     <header role="heading" aria-level={1} className={"heading"}>
-      <h1>Nihil List</h1>
-      {selectedItemId > -1 && <h2>Selected items: {selectedItemId}</h2>}
-      <ul>
-        {selectedItems?.map((item, index) => {
-          return <li key={index}>{item}</li>;
-        })}
-      </ul>
+      <h1>The List</h1>
+      {selectedItems?.length > 0 ? (
+        <h2>Selected items: {selectedItems.join(",")}</h2>
+      ) : (
+        <h2> - </h2>
+      )}
     </header>
   );
 };

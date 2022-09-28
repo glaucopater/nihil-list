@@ -4,5 +4,5 @@ import { Header } from ".";
 test("renders an empty Header", () => {
   render(<Header />);
   const headers = screen.getAllByRole("heading");
-  expect(headers).toHaveLength(2);
+  expect(headers).toHaveLength(3);
 });
