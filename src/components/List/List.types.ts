@@ -1,4 +1,4 @@
-export type ListProps = {
-  data: any[];
+export type ListProps<T> = {
+  data: T[];
   renderer?: () => void;
 };

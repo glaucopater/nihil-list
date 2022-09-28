@@ -1,0 +1,12 @@
+ul {
+  background-color: chartreuse;
+}
+
+li {
+  background-color: antiquewhite;
+}
+
+li:hover {
+  background-color: chartreuse;
+  cursor: pointer;
+}
