@@ -6,6 +6,8 @@ ul {
 
 li {
   background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
 }
 
 li:hover {
@@ -18,5 +20,5 @@ li.selected {
 }
 
 .adornment {
-  align-self: flex-end;
+  align-self: flex-start;
 }

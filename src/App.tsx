@@ -2,7 +2,10 @@ import { Key, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { List } from "./components/List";
-import { dataset2 } from "./components/List/List.fixtures";
+import {
+  dataset2,
+  renderer2
+} from "./components/List/List.fixtures";
 import UserContext from "./contexts/UserContext";
 
 function App() {
@@ -25,12 +28,7 @@ function App() {
     >
       <div className="App">
         <Header />
-        <List
-          data={dataset2}
-          renderer={function (): void {
-            throw new Error("Function not implemented.");
-          }}
-        />
+        <List data={dataset2} renderer={renderer2} />
       </div>
     </UserContext.Provider>
   );
