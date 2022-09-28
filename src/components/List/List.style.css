@@ -1,13 +1,26 @@
-ul {
+ul.list {
   background-color: chartreuse;
   display: flex;
   flex-direction: column;
 }
 
-li {
+li.default,
+li.selected {
+  display: flex;
+  justify-content: center;
+}
+
+li.default > div,
+li.selected > div {
   background-color: antiquewhite;
   display: flex;
   flex-direction: column;
+  border: 1px solid #ccc;
+}
+
+.field {
+  border: 1px solid #ccc;
+  padding: 8px;
 }
 
 li:hover {
@@ -20,5 +33,6 @@ li.selected {
 }
 
 .adornment {
-  align-self: flex-start;
+  font-size: 32px;
+  justify-content: center;
 }

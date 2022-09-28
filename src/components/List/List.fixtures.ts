@@ -27,7 +27,12 @@ export const renderer2 = () => {
   return ["name", "description", "link"];
 };
 
-
 export const renderer3 = () => {
   return ["a", "b", "c", "link"];
 };
+
+
+export const rendererBigDataser = () => {
+  return ["balance", "name", "company", "email", "phone"];
+};
+

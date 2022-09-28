@@ -2,10 +2,8 @@ import { Key, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { List } from "./components/List";
-import {
-  dataset2,
-  renderer2
-} from "./components/List/List.fixtures";
+import { rendererBigDataser } from "./components/List/List.fixtures";
+import { bigDataSet } from "./data/bigDataSet";
 import UserContext from "./contexts/UserContext";
 
 function App() {
@@ -28,7 +26,7 @@ function App() {
     >
       <div className="App">
         <Header />
-        <List data={dataset2} renderer={renderer2} />
+        <List data={bigDataSet} renderer={rendererBigDataser} />
       </div>
     </UserContext.Provider>
   );
