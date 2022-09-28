@@ -1,4 +1,4 @@
 export type ListProps = {
-  data: [];
+  data: any[];
   renderer?: () => void;
 };
