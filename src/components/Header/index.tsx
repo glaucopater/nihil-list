@@ -1,9 +1,9 @@
-import "./Header.style.css";
 import { useContext } from "react";
-import UserContext, { ContextProps } from "../../contexts/UserContext";
+import CustomContext, { ContextProps } from "../../contexts/UserContext";
+import "./Header.style.css";
 
 export const Header = () => {
-  const initialStore = useContext(UserContext);
+  const initialStore = useContext(CustomContext);
   const { store } = (initialStore as ContextProps) || {};
   const selectedItems = store as number[];
 

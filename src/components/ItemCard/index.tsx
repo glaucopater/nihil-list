@@ -1,3 +1,4 @@
+import React from "react";
 import { JsonType } from "../List/List.types";
 import "./ItemCard.style.css";
 
@@ -31,3 +32,7 @@ export const ItemCard = ({
     </div>
   );
 };
+
+ItemCard.whyDidYouRender = true;
+
+export const MemoizedItemCard = React.memo(ItemCard);

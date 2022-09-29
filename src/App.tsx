@@ -1,11 +1,11 @@
 import { Key, useState } from "react";
-import "./App.css";
 import { Header } from "./components/Header";
 import { List } from "./components/List";
 import { rendererBigDataser } from "./components/List/List.fixtures";
-import { bigDataSet } from "./data/bigDataSet";
-import UserContext from "./contexts/UserContext";
-
+import CustomContext from "./contexts/UserContext";
+import "./App.css";
+import { bigDataSet } from "./data/bigdataset";
+ 
 function App() {
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
 
@@ -21,14 +21,14 @@ function App() {
   };
 
   return (
-    <UserContext.Provider
+    <CustomContext.Provider
       value={{ store: selectedItems, updateStore: handleUpdateStore }}
     >
       <div className="App">
         <Header />
         <List data={bigDataSet} renderer={rendererBigDataser} />
       </div>
-    </UserContext.Provider>
+    </CustomContext.Provider>
   );
 }
 

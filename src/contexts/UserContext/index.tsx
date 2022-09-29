@@ -5,5 +5,5 @@ export type ContextProps<T = object> = {
   updateStore: (index: Key | null | undefined) => void;
 };
 
-const UserContext = createContext<ContextProps | undefined>(undefined);
-export default UserContext;
+const CustomContext = createContext<ContextProps | undefined>(undefined);
+export default CustomContext;
