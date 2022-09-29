@@ -1,15 +1,15 @@
 export const dataset1 = [
   {
     id: 1,
-    title: "name 1",
+    title: "Title 1",
   },
   {
     id: 2,
-    title: "name 2",
+    title: "Title 2",
   },
   {
     id: 3,
-    title: "name 3",
+    title: "Title 3",
   },
 ];
 
@@ -31,8 +31,6 @@ export const renderer3 = () => {
   return ["a", "b", "c", "link"];
 };
 
-
 export const rendererBigDataser = () => {
   return ["balance", "name", "company", "email", "phone"];
 };
-

@@ -1,38 +1,21 @@
-ul.list {
-  background-color: chartreuse;
+ul {
   display: flex;
   flex-direction: column;
+  list-style-type: none;
+  align-items: center;
 }
 
-li.default,
-li.selected {
-  display: flex;
-  justify-content: center;
-}
-
-li.default > div,
-li.selected > div {
-  background-color: antiquewhite;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ccc;
-}
-
-.field {
-  border: 1px solid #ccc;
+li {
   padding: 8px;
+  margin: 8px;
+  width: 80%;
 }
 
-li:hover {
-  background-color: chartreuse;
-  cursor: pointer;
+@media only screen and (min-width: 600px) {
+  li {
+    width: 500px;
+  }
 }
-
-li.selected {
-  background: wheat;
-}
-
-.adornment {
-  font-size: 32px;
-  justify-content: center;
+.item-selected {
+  list-style-type: "𐄂";
 }

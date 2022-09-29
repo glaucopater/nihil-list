@@ -1,0 +1,25 @@
+.item-card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-card:hover {
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+.item-selected {
+  list-style-type: "𐄂";
+}
+
+.item-selected::marker {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.item-card-selected {
+  background-color: lightgreen;
+}

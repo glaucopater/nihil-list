@@ -1,7 +1,8 @@
 import { Key, SyntheticEvent, useContext } from "react";
-import { ListProps } from "./List.types";
+import { JsonType, ListProps } from "./List.types";
 import "./List.style.css";
 import UserContext, { ContextProps } from "../../contexts/UserContext";
+import { ItemCard } from "../ItemCard";
 
 export const List = <T,>({
   data,
@@ -17,46 +18,33 @@ export const List = <T,>({
     };
 
   const applySelectedClass = (index: number) => {
-    return isSelectedItem(index) ? "selected" : "default";
+    return isSelectedItem(index) ? "item-selected" : "default";
   };
 
   const isSelectedItem = (index: number) => {
     return store && (store as number[]).includes(index as number);
   };
 
-  const applyRenderer = (item: any) => {
-    const attributes = renderer && renderer();
-
-    if (attributes) {
-      // sanitize output
-      return attributes.map((attr, index) => (
-        <span key={index} className="field">
-          {item[attr] ?? `field ${attr} found`}
-        </span>
-      ));
-    }
-  };
-
   return (
-    <ul className="list">
-      <li></li>
-      <li>Info</li>
-      {data?.map((item: T, index: Key | null | undefined) => {
-        return (
-          <li
-            key={index}
-            onClick={(e) => handleOnClick(index)(e)}
-            className={applySelectedClass(index as number)}
-          >
-            {isSelectedItem(index as number) && (
-              <div key={index} className="adornment">
-                x
-              </div>
-            )}
-            <div>{applyRenderer(item)}</div>
-          </li>
-        );
-      })}
-    </ul>
+    <>
+      <h2>Info</h2>
+      <ul className="list">
+        {data?.map((item, index: Key | null | undefined) => {
+          return (
+            <li
+              key={index}
+              onClick={(e) => handleOnClick(index)(e)}
+              className={applySelectedClass(index as number)}
+            >
+              <ItemCard
+                item={item as JsonType}
+                renderer={renderer}
+                isSelected={isSelectedItem(index as number)}
+              />
+            </li>
+          );
+        })}
+      </ul>
+    </>
   );
 };

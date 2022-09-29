@@ -9,12 +9,11 @@ export const Header = () => {
 
   return (
     <header role="heading" aria-level={1} className={"heading"}>
-      <h1>The List</h1>
-      {selectedItems?.length > 0 ? (
-        <h2>Selected items: {selectedItems.join(",")}</h2>
-      ) : (
-        <h2> - </h2>
-      )}
+      <h1 className="title">The List</h1>
+      <h2 className="info">
+        Selected items:{" "}
+        {selectedItems?.length > 0 ? selectedItems.join(",") : "none"}
+      </h2>
     </header>
   );
 };

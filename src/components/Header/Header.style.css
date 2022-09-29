@@ -1,3 +1,11 @@
 .heading {
   background-color: cornflowerblue;
 }
+
+.title {
+  margin: 8px;
+}
+
+.info {
+  padding: 8px;
+}
