@@ -2,9 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Demo
+## [Demo](https://stirring-gumdrop-bc28d9.netlify.app/) ⚡
 
-https://stirring-gumdrop-bc28d9.netlify.app/
+![Demo](/demo/demo.png)
 
 ## Available Scripts
 
