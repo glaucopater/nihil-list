@@ -5,6 +5,10 @@ ul.list {
   align-items: center;
 }
 
+.info {
+  color: #111;
+}
+
 li {
   padding: 8px;
   margin: 8px;

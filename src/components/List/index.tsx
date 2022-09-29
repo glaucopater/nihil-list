@@ -19,7 +19,7 @@ export const List = <T,>({
 
   return (
     <>
-      <h2>Info</h2>
+      <h3 className="info">Info</h3>
       <ul className="list">
         {data?.map((item, index: CustomKey) => {
           return (

@@ -1,11 +1,14 @@
 .heading {
   background-color: cornflowerblue;
+  color: #111;
 }
 
 .title {
   margin: 8px;
+  color: #111;
 }
 
-.info {
+.selected-items {
   padding: 8px;
+  color: #111;
 }

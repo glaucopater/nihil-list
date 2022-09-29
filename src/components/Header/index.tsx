@@ -10,7 +10,7 @@ export const Header = () => {
   return (
     <header role="heading" aria-level={1} className={"heading"}>
       <h1 className="title">The List</h1>
-      <h2 className="info">
+      <h2 className="selected-items">
         Selected items:{" "}
         {selectedItems?.length > 0 ? selectedItems.join(",") : "none"}
       </h2>
