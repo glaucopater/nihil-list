@@ -1,11 +1,10 @@
 import { Key, useState } from "react";
 import { Header } from "./components/Header";
 import { List } from "./components/List";
-import { rendererBigDataser } from "./components/List/List.fixtures";
-import CustomContext from "./contexts/UserContext";
+import CustomContext from "./contexts/CustomContext";
 import "./App.css";
-import { bigDataSet } from "./data/bigdataset";
- 
+import { bigdataset, rendererBigDataset } from "./data/bigdataset";
+
 function App() {
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
 
@@ -26,7 +25,7 @@ function App() {
     >
       <div className="App">
         <Header />
-        <List data={bigDataSet} renderer={rendererBigDataser} />
+        <List data={bigdataset} renderer={rendererBigDataset} />
       </div>
     </CustomContext.Provider>
   );

@@ -1,6 +1,6 @@
 import { Key, SyntheticEvent, useContext } from "react";
 import { JsonType, ListProps } from "./List.types";
-import CustomContext, { ContextProps } from "../../contexts/UserContext";
+import CustomContext, { ContextProps } from "../../contexts/CustomContext";
 import { MemoizedItemCard } from "../ItemCard";
 import "./List.style.css";
 
@@ -13,7 +13,7 @@ export const List = <T,>({
   const { store, updateStore } = (initialStore as ContextProps) || {};
 
   const handleOnClick =
-    (index: Key | null | undefined) => (e: SyntheticEvent) => {
+    (index: Key | null | undefined) => (_e: SyntheticEvent) => {
       updateStore(index);
     };
 
@@ -48,5 +48,3 @@ export const List = <T,>({
     </>
   );
 };
-
-List.whyDidYouRender = true;

@@ -1,4 +1,8 @@
-export const bigDataSet = [
+export const rendererBigDataset = () => {
+  return ["balance", "name", "company", "email", "phone"];
+};
+
+export const bigdataset = [
   {
     _id: "6334aa1dacf2731b9de0f98a",
     index: 0,

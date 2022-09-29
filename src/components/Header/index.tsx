@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import CustomContext, { ContextProps } from "../../contexts/UserContext";
+import CustomContext, { ContextProps } from "../../contexts/CustomContext";
 import "./Header.style.css";
 
 export const Header = () => {

@@ -14,4 +14,10 @@ describe("ItemCard", () => {
     const component = screen.getByText("Title 1");
     expect(component).toBeInTheDocument();
   });
+
+  test("renders a ItemCard with a wrong renderer", () => {
+    render(<ItemCard item={dataset1[0]} renderer={() => ["title 0"]} />);
+    const component = screen.getByText("Field 'title 0' not found!");
+    expect(component).toBeInTheDocument();
+  });
 });
