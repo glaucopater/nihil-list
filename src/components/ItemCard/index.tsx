@@ -1,10 +1,7 @@
 import React from "react";
+import { getAttributeValueFromItem, getWarningMessage } from "../../utils";
 import { JsonType } from "../List/List.types";
 import "./ItemCard.style.css";
-
-const getWarningMessage = (attr: string) => {
-  return `Field '${attr}' not found!`;
-};
 
 export const ItemCard = ({
   item,
@@ -17,10 +14,6 @@ export const ItemCard = ({
 }) => {
   const attributes: string[] = renderer();
 
-  const getAttributeValue = (item: JsonType, attr: string) => {
-    return item[attr] as keyof typeof item;
-  };
-
   return (
     <div
       className={`item-card${isSelected ? " item-card-selected" : ""}`}
@@ -29,14 +22,12 @@ export const ItemCard = ({
       {attributes.map((attr: string, index: number) => (
         <span key={index} className="field">
           {(item as JsonType).hasOwnProperty(attr)
-            ? getAttributeValue(item, attr)
+            ? getAttributeValueFromItem(item, attr)
             : getWarningMessage(attr)}
         </span>
       ))}
     </div>
   );
 };
-
-ItemCard.whyDidYouRender = true;
 
 export const MemoizedItemCard = React.memo(ItemCard);

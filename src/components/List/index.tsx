@@ -1,7 +1,8 @@
-import { Key, SyntheticEvent, useContext } from "react";
-import { JsonType, ListProps } from "./List.types";
+import { SyntheticEvent, useContext } from "react";
+import { CustomKey, JsonType, ListProps } from "./List.types";
 import CustomContext, { ContextProps } from "../../contexts/CustomContext";
 import { MemoizedItemCard } from "../ItemCard";
+import { applyCssClassToItem, isSelectedItem } from "../../utils";
 import "./List.style.css";
 
 export const List = <T,>({
@@ -12,34 +13,29 @@ export const List = <T,>({
 
   const { store, updateStore } = (initialStore as ContextProps) || {};
 
-  const handleOnClick =
-    (index: Key | null | undefined) => (_e: SyntheticEvent) => {
-      updateStore(index);
-    };
-
-  const applySelectedClass = (index: number) => {
-    return isSelectedItem(index) ? "item-selected" : "default";
-  };
-
-  const isSelectedItem = (index: number) => {
-    return store && (store as number[]).includes(index as number);
+  const handleOnClick = (index: CustomKey) => (_e: SyntheticEvent) => {
+    updateStore(index);
   };
 
   return (
     <>
       <h2>Info</h2>
       <ul className="list">
-        {data?.map((item, index: Key | null | undefined) => {
+        {data?.map((item, index: CustomKey) => {
           return (
             <li
               key={index}
               onClick={(e) => handleOnClick(index)(e)}
-              className={applySelectedClass(index as number)}
+              className={applyCssClassToItem(
+                index as number,
+                store as number[],
+                "item-selected"
+              )}
             >
               <MemoizedItemCard
                 item={item as JsonType}
                 renderer={renderer}
-                isSelected={isSelectedItem(index as number)}
+                isSelected={isSelectedItem(index as number, store as number[])}
               />
             </li>
           );

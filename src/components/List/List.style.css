@@ -1,4 +1,4 @@
-ul {
+ul.list {
   display: flex;
   flex-direction: column;
   list-style-type: none;
@@ -16,6 +16,7 @@ li {
     width: 500px;
   }
 }
+
 .item-selected {
-  list-style-type: "𐄂";
+  list-style-type: "❎";
 }
